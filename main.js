@@ -18,6 +18,12 @@ const rowElements = document.querySelectorAll(".row")
 function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
+replaceAllButton.addEventListener('click', function (){
+    console.log('are you working')
+
+
+})
+
 
 
 // YOUR CODE GOES HERE
