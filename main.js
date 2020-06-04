@@ -18,13 +18,41 @@ const rowElements = document.querySelectorAll(".row")
 function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
-replaceAllButton.addEventListener('click', function (){
-    console.log('are you working')
+replaceAllButton.addEventListener('click', function() {
+    
+    let findValue = findInput.value
+    let replaceValue = replaceInput.value
+
+    let replaced = 0
+
+    for (row = 0; row < rowElements.length; row += 1) {
+
+        let cellElements = getCellElements(rowElements[row])
+
+        for (cell = 0; cell < cellElements.length; cell += 1) {
+
+            if (cellElements[cell].innerText.includes(findValue)) {
+
+                let cellText = cellElements[cell].innerHTML.split(" ")
+
+                for (Index = 0; Index < cellText.length; Index += 1) {
+                    
+                    let loopIndex = cellText[Index].split("")
 
 
+                        if (cellText[Index].includes(findValue)) {
+                        
+                            for (let loops = 0; loops < loopIndex.length; loops += 1 ) {
+                                console.log(cellText[Index])
+                                cellElements[cell].innerHTML = cellElements[cell].innerHTML.replace(findValue, replaceValue)
+                        }
+                        replaced += 1
+                    }
+                }
+            }
+        }
+    }
 })
-
-
 
 // YOUR CODE GOES HERE
 
