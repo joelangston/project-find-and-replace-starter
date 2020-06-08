@@ -43,8 +43,8 @@ replaceAllButton.addEventListener('click', function() {
                         if (cellText[Index].includes(findValue)) {
                         
                             for (let loops = 0; loops < loopIndex.length; loops += 1 ) {
+                                 cellElements[cell].innerHTML = cellElements[cell].innerHTML.replace(findValue, replaceValue)
                                 console.log(cellText[Index])
-                                cellElements[cell].innerHTML = cellElements[cell].innerHTML.replace(findValue, replaceValue)
                         }
                         replaced += 1
                     }
