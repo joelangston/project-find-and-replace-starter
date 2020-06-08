@@ -33,18 +33,18 @@ replaceAllButton.addEventListener('click', function() {
 
             if (cellElements[cell].innerText.includes(findValue)) {
 
-                let cellText = cellElements[cell].innerHTML.split(" ")
+                let textIndex = cellElements[cell].innerHTML.split(" ")
 
-                for (Index = 0; Index < cellText.length; Index += 1) {
+                for (Index = 0; Index < textIndex.length; Index += 1) {
                     
-                    let loopIndex = cellText[Index].split("")
+                    let loopIndex = textIndex[Index].split("")
 
 
-                        if (cellText[Index].includes(findValue)) {
+                        if (textIndex[Index].includes(findValue)) {
                         
                             for (let loops = 0; loops < loopIndex.length; loops += 1 ) {
                                  cellElements[cell].innerHTML = cellElements[cell].innerHTML.replace(findValue, replaceValue)
-                                console.log(cellText[Index])
+                                console.log(textIndex[Index])
                         }
                         replaced += 1
                     }
